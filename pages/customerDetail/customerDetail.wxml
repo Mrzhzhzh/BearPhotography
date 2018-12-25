@@ -1,0 +1,28 @@
+<!--index3.wxml-->
+<view class="user_banner flex">
+    <view class="user_box flex">
+        <view class="banner_left flex">
+            <view class="" style="text-align:center;width:100%;">
+                <view class="user_img">
+                    <image src="{{web_mainData.user[0].headImgUrl}}" class="user_img"/>
+                </view>
+            </view>
+        </view>
+        <view class="banner_right font30 color2">
+            {{web_mainData.user[0].nickname}}
+        </view>
+    </view>
+</view>
+<view class="w690 font26 color2" style="height:84rpx;line-height:84rpx;border-bottom:solid 1px #d6d6d6;">
+    {{web_mainData.title}}
+</view>
+<view class="w690" style="border-bottom:solid 1px #d6d6d6;">
+    <view class="flex1" style="margin:30rpx 0">
+        <view class="flex_left font30 color2">分类:{{web_mainData.label[0].title}}</view>
+    </view>
+</view>
+<view class="w690">
+    <block wx:for="{{web_mainData.mainImg}}" wx:key="id">
+        <image src="{{item.url}}" />
+    </block>
+</view>

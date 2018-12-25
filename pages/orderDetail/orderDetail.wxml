@@ -1,0 +1,118 @@
+<!--detail.wxml-->
+<view id="details">
+	<view class="banner bg1">
+		<image src="/images/index.png"></image>
+	</view>
+	<view class="w690 bg1" style="margin-bottom:30rpx;border-bottom:30rpx solid #f6f6f6;">
+		<view class="product_names avoidOverflow font32 color4">
+			{{web_mainData.title}}
+		</view>
+		<view class="color5 font28" style="height:52rpx;">¥{{web_mainData.price}}</view>
+	</view>
+	<view class="detail bg1">
+		<view class="detail_comment flexRowBetween">
+			<view class="detail  {{tabCurrent == 0?'detail_select':''}}" data-current="0" bindtap="select_this">
+				商品详情
+			</view>
+			<view class="comment {{tabCurrent == 1?'detail_select':''}}"  data-current="1" bindtap="select_this">
+				照片展示
+			</view>
+		</view>
+	<view class="detail_show">
+		<view id="detail" class="w690" style="{{tabCurrent == 0?'display:block':'display:none'}}">
+			<view class="detail_line flex">
+				<view class="content ql-editor" >
+	                <import src="../../wxParse/wxParse.wxml"/>
+	                <template is="wxParse" data="{{wxParseData:web_mainData.content}}"/>
+	            </view> 
+			</view>
+		</view>
+
+		<view id="comment" style="{{tabCurrent == 1?'display:block':'display:none'}}">
+			<view class="w690 recommend flexRowBetween">
+			<block wx:for="{{web_mainData.mainImg}}" wx:key="index">
+		      <view class="recommend_left bg1">
+		          <view class="recommend_img"><image src="{{item.url}}"></image></view>
+		      </view>
+		    </block>
+		  </view>
+		</view>
+	</view>
+</view>
+<view class="{{isShow?'mask':''}}"></view>
+
+</view>
+<view id="buy">
+	<view class="buy_click">
+		<view class="buy_left flex">
+			<view class="consult collect" style="text-align:center;" bindtap="collect">
+				<image src="{{web_isInCollectData?'/images/collect_a.png':'/images/collect.png'}}"></image>
+				<view class="font24 color2">{{web_isInCollectData?'已收藏':'收藏'}}</view>
+			</view>
+			<view class="consult" style="text-align:left;" bindtap="selectModel" data-type="addCart">
+				<image src="/images/shopping.png" style="margin-left:25%;"></image>
+				<view class="font24 color2">加入购物车</view>
+			</view>
+		</view>
+		<view class="buy_right" bindtap="selectModel" data-type="buy">
+			<view class="go_buy bg">
+				立即购买
+			</view>
+		</view>
+	</view>
+</view>
+<view id="choose" class="{{isShow?'sildeIn':'slideOut'}}">
+	<view style="position:relative;height:100%;overflow:hidden;">
+		<view class="w690">
+			<view class="flexRowBetween pricity">
+				<view class="choose_pro">
+					<image src="{{web_choosed_skuData.mainImg[0].url}}"></image>
+				</view>
+				<view class="product_txt">
+					<view class="pro_name">{{web_choosed_skuData.title}}</view>
+					<view class="pro_type">
+						{{web_choosed_skuData.description}}
+					</view>
+					<view class="font28 color5" style="height:25%;">
+					￥{{web_totalPrice?web_totalPrice:web_choosed_skuData.price}}
+					</view>
+					
+				</view>
+				<view class="close" bindtap="close">
+					<image src="/images/close.jpg"></image>
+				</view>
+			</view>
+			<block wx:for="{{web_skuLabelData}}" wx:key="id" >
+				<view class="pro_type" style="margin-bottom:30rpx;">	
+					{{item.title}}
+				</view>
+				<scroll-view scroll-Y style="height:150rpx;margin-bottom:30rpx;">
+					<view class="type_right flex">
+						<block wx:for="{{web_skuLabelData[index].child}}" wx:key="id" wx:for-item="c_item">
+							<view class="pro_types" data-id="{{c_item.id}}" data-parentid="{{item.id}}"  bindtap="{{func.inArray(c_item.id,web_can_choose_sku_item)!=-1?'chooseSku':''}}" style="{{func.inArray(c_item.id,web_can_choose_sku_item)==-1?'border:1px dashed  #e5e5e5;color:#e5e5e5;':(func.inArray(c_item.id,web_choosed_sku_item)!=-1?'border:1px solid #21c3d4;color:#21c3d4;':'')}}">	
+								{{c_item.title}}
+							</view>
+						</block>
+					</view>
+				</scroll-view>
+			</block>
+			<view class="choose_number flexRowBetween">
+				<view class="number_txt color2 font26">
+					购买数量
+				</view>
+				<view class="edit_number flexRowBetween">
+					<view class="minus" style="line-height:45rpx;border-right: solid 1px #e5e5e5;" data-type="-" bindtap="counter" data-id="{{web_skuLabelData.id}}">-</view>
+					<input class="number" type="number" bindchange="bindManual" value="{{web_count}}" />
+					<view class="add" data-type="+" bindtap="counter" data-id="{{web_skuLabelData.id}}">+</view>
+				</view>
+			</view>
+		</view>
+		<view class="w690 message flex">
+			<view class="message_left font26 color2">留言备注</view>
+			<view class="message_right font24  color2"><input placeholder="留言备注" data-key="passage1" bindblur="changeBind" value="{{web_submitData.passage1}}"></input></view>
+		</view>
+		<button class="submit_info bg" bindtap="close" style="margin-top:69rpx;border-radius:30rpx;" bindtap="{{web_buttonCanClick?(web_buttonType=='buy'?'goBuy':'addCart'):''}}">确认</button>
+	</view>
+</view>
+
+

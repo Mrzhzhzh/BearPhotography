@@ -1,0 +1,20 @@
+<!--user.wxml-->
+<view class="index_tab flexRowBetween">
+    <view class="tab_item {{num == 0?'this_tab':''}}" data-num="0" bindtap="{{web_buttonCanClick?'menuClick':''}}">
+      一级
+    </view>
+    <view  class="tab_item {{num == 1?'this_tab':''}}" data-num="1"  bindtap="{{web_buttonCanClick?'menuClick':''}}">
+      二级
+    </view>
+</view>
+<view class="cash" >
+  <block wx:for="{{web_mainData}}" wx:key="id">
+    <view class="p40">
+      <view class="cash_cont flexRowBetween">
+        <view class="tlt_item tlt_left">{{item.userInfo[0].nickname}}</view>
+        <view class="tlt_item tlt_right">{{item.create_time}}</view>
+      </view>
+    </view>
+  </block>
+</view>
+

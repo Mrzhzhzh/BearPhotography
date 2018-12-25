@@ -1,0 +1,22 @@
+<view class="w690 bg1">
+  <scroll-view scroll-x="true" class="ip_tab_comtainer bg1">
+      <view class="ip_tab_item_n" data-num="0" bindtap="{{web_buttonCanClick?'tab':''}}">
+        	<text class="color2 {{web_num == 0?'tabs_this':''}}">全部</text>
+      </view>
+      <block wx:for="{{web_labelData}}" wx:key="id">
+        <view class="ip_tab_item_n" data-num="{{item.id}}" bindtap="{{web_buttonCanClick?'tab':''}}">
+            <text class="color2 {{web_num == item.id?'tabs_this':''}}">{{item.title}}</text>
+        </view>
+      </block>
+  </scroll-view>
+</view>
+<view class="w690" style="margin-top:30rpx;">
+  <view class="recommended flexRowBetween">
+    <block wx:for="{{web_mainData}}" wx:key="id">
+      <view class="recommend_left bg1" data-path="/pages/customerDetail/customerDetail?id={{item.id}}" bindtap="intoPath">
+        <view class="recommend_img"><image src="{{item.mainImg[0].url}}"></image></view>
+        <view class="product_name font28 color2">{{item.title}}</view>
+      </view>
+    </block>
+  </view>
+</view>

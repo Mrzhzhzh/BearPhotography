@@ -1,0 +1,30 @@
+<!--index3.wxml-->
+<view class="date font30 flex bg1">
+   <view class="date_left flexCenter">
+       <text class="color2 font30">当前积分:</text>
+       <text class="color font30">{{web_userData.score}}</text>
+   </view>
+   <view class="date_left flexCenter" >
+       <text class="color2 font30">分销积分:</text>
+       <text class="color font30">{{web_computeData.info.FlowLog.countsum}}</text>
+   </view>
+</view>
+<view class="credit_cont">
+  <block wx:for="{{web_mainData}}" wx:key="id">
+    <view class="credit_list bg1">
+        <view class="credit_item">
+            <view class="credit_left">
+                <view class="credit_reson font28">
+                    {{item.trade_info}}
+                </view>
+                <view class="credit_dates font24 color9">
+                    {{item.create_time}}
+                </view>
+            </view>
+            <view class="credit_right font28 {{item.count>0?'color':''}}">
+                {{item.count}}
+            </view>
+        </view>
+    </view>
+  </block>
+</view>

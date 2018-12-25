@@ -1,0 +1,19 @@
+<!--index3.wxml-->
+<block wx:for="{{web_mainData}}" wx:key="id">
+    <view class="product bg1" bindtap="intoPath" data-path="/pages/orderDetail/orderDetail?id={{item.id}}">
+        <view class="product_box w690 flexRowBetween">
+            <view class="product_left">
+                <image src="{{item.mainImg[0].url}}"></image>
+            </view>
+            <view class="product_right flex">
+                <view class="product_detail">
+                    <view class="font32 color3 product_top avoidOverflow">{{item.title}}</view>
+                    <view class="font26 color9 avoidOverflow">{{item.description}}</view>
+                    <view class="font26 color5" style="height:40%;line-height:70rpx;">
+                       ¥{{item.price}}
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
