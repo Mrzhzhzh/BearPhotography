@@ -9,24 +9,29 @@
     </block>
 </swiper>
 
-<view class="w690 bg1">
-  <view class="menu flexRowBetween">  
-    <view class="menu_item" bindtap="intoPath" data-path="/pages/sort/sort">
-          <image src="/images/index_icon9.png" mode="aspectFill"></image>
-          <view class="menu_box color1 font26">
-              全部
+<view class="bg1 w710">
+  <scroll-view scroll-x="true" class="ip_tab_comtainer">
+    <view class="menu">  
+      <view class="menu_item" bindtap="intoPath" data-path="/pages/sort/sort">
+        <view class="menu_boxs">
+              <image src="/images/index_icon9.png" mode="aspectFill"></image>
+              <view class="menu_box color1 font26">
+                  全部
+              </view>
           </view>
-      </view>
-      <block wx:for="{{web_labelData}}" wx:key="id">
-        <view class="menu_item" bindtap="intoPath" data-path="/pages/sort/sort?id={{item.id}}">
-            <image src="{{item.mainImg[0].url}}" mode="aspectFill"></image>
-            <view class="menu_box color1 font26">
-               {{item.title}}
-            </view>           
-        </view>
-      </block>
-    
-  </view>
+       </view>
+        <block wx:for="{{web_labelData}}" wx:key="id">
+          <view class="menu_item" bindtap="intoPath" data-path="/pages/sort/sort?id={{item.id}}">
+            <view class="menu_boxs">
+              <image src="{{item.mainImg[0].url}}" mode="aspectFill"></image>
+              <view class="menu_box color1 font26">
+                 {{item.title}}
+              </view>  
+              </view>         
+          </view>
+        </block>
+    </view>
+  </scroll-view>
 </view>
 <view class="w690">
   <view class="recommended_tlt flex">
@@ -86,7 +91,7 @@
 </view>
 
 <view class="contact">
-    <view class="contact_item bg1 flex">
+    <view class="contact_item bg1 flex" bindtap="wx_contact">
         <image src="/images/contact_icon1.png"></image>
     </view>
     <view class="contact_item bg1 flex" bindtap="phoneCall">
@@ -99,7 +104,11 @@
         <image src="/images/contact_icon4.png"></image>
     </view>
 </view>
-
+<view class="mask" wx:if="{{is_show}}" catchtouchmove="true" bindtap="mask">
+    <view class="wx_contact">
+      <image src="{{web_aboutData.mainImg&&web_aboutData.mainImg[0]?web_aboutData.mainImg[0].url:''}}"></image>
+    </view>
+</view>
 <view class="space_bottom"></view>
 <view class="navbar">
     <view class="navbar_item">

@@ -34,41 +34,40 @@
     </view>
 
     <view id="confirmOrder"  wx:if="{{web_addressData.name}}">
-    <view class="confirm_address" bindtap="intoPath" data-path="/pages/userAddress/userAddress" >
+    <view class="confirm_address w690" bindtap="intoPath" data-path="/pages/userAddress/userAddress" >
         <view class="order_user flexRowBetween">
-            
-                <view class="user_name" style="width:50%;text-align:left;overflow:hidden;">
-                    <text class="text1">收货人:</text>
-                    <text class="text1">{{web_addressData.name}}</text>
-                </view>
-                <view class="user_phone" style="width:50%;text-align:right;overflow:hidden;">
-                    {{web_addressData.phone}}
-                </view>
+            <view class="user_name" style="width:50%;height:60rpx;line-height:60rpx;text-align:left;overflow:hidden;">
+                <text class="text1 color3 font30">收货人:</text>
+                <text class="text1 color4  font28">{{web_addressData.name}}</text>
+            </view>
+            <view class="user_phone color3 font30" style="width:50%;text-align:right;overflow:hidden;height:76rpx;line-height:76rpx;">
+                {{web_addressData.phone}}
+            </view>
         </view>
         <view class="user_address">
             <view class="recive flexRowBetween">
-                <view class="map_icon" style="width:7%;text-align:left">
-                    <view class="scale2" style="width:30px;height:36px;{{img}};background-position: -300px -146px;"></view>
-                </view>
-                <view class="detail_address" style="width:86%;{{fonts[3].font}}">收货地址：{{web_addressData.province+web_addressData.city+web_addressData.country+web_addressData.detail}}</view>
-                <view class="next_page scale2" style="{{img}};background-position: -658px -46px;"></view>
+                <view class="detail_address color4" style="height:76rpx;line-height:76rpx;width:86%;{{fonts[3].font}}">收货地址：{{web_addressData.province+web_addressData.city+web_addressData.country+web_addressData.detail}}</view>
             </view>
         </view>
     </view>
 </view>
 <view class="confirm"  style="display:flex;align-items:center;border-bottom:solid 1px #ececec" bindtap="intoPath" data-path="/pages/userAddress/userAddress" wx:else>
-    <view class="order_user"  style="{{fonts[5].font}};padding:0 50rpx" >
-        <view class="order_left" >
+    <view class="order_user w690">
+        <view class="order_left font30" style="margin:20rpx auto;">
             请选择收货地址
         </view>
     </view>
     <view class="next_page scale2" style="{{img}};background-position: -658px -46px;"></view>
 </view>
 </view>
-<view>可用积分：{{web_userData.score}}</view>
-<view><input data-key="score"   bindblur="inputBind" value="{{web_sForm.score}}"></input></view>
-<view>积分抵扣:{{web_pay.score?web_pay.score:'0'}}</view>
-<view class="confirm_btn flex font30">
-   <view class="confirm_left color6">合计:<text class="color5"> ¥{{web_pay.wxPay&&web_pay.wxPay.price||0}}</text></view> 
-   <view class="confirm_right color1 bg" bindtap="{{web_buttonCanClick?'submit':''}}">提交订单</view> 
+<view class="w690">
+    <view class="font30 color2" style="height:70rpx;line-height:70rpx;">可用积分：{{web_userData.score}}</view>
+    <view>
+        <input data-key="score" style="border:solid 1px #e0e0e0;border-radius:10rpx;line-height:60px;height:60rpx;font-size:26rpx;padding-left:20rpx;"   bindblur="inputBind" value="{{web_sForm.score}}"></input>
+    </view>
+    <view class="font30 color2" style="height:70rpx;line-height:70rpx;">积分抵扣:{{web_pay.score?web_pay.score:'0'}}</view>
+    <view class="confirm_btn flex font30">
+       <view class="confirm_left color6">合计:<text class="color5"> ¥{{web_pay.wxPay&&web_pay.wxPay.price||0}}</text></view> 
+       <view class="confirm_right color1 bg" bindtap="{{web_buttonCanClick?'submit':''}}">提交订单</view> 
+    </view>
 </view>

@@ -5,6 +5,7 @@ const app = getApp();
 
 Page({
   data: {
+    is_show:false,
     mainData:[],
     labelData:[],
     indicatorDots: true,
@@ -141,7 +142,18 @@ Page({
     };
     api.articleGet(postData,callback);   
   },
-
+  wx_contact(){
+    const self =this;
+    self.setData({
+      is_show:true,
+    })
+  },
+  mask(){
+    const self =this;
+    self.setData({
+      is_show:false,
+    })
+  },
   intoMap:function(){
     wx.getLocation({
       type: 'gcj02', //返回可以用于wx.openLocation的经纬度

@@ -266,3 +266,26 @@ page{
     height: 0;
     color: transparent;
 }
+.mask{
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.5);
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:999;
+	overflow:hidden;
+}
+.wx_contact{
+	position:absolute;
+	left:0;
+	top:26%;
+	text-align:center;
+	width:100%;
+	height:400rpx;
+}
+.wx_contact image{
+	width:400rpx;
+	height:100%;
+	margin:0 auto;
+}

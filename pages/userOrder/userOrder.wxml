@@ -15,15 +15,15 @@
 </view>
 <block wx:for="{{web_mainData}}" wx:key="id">
 <view class="product">
-    <view class="order_tlt w690 flexRowBetween ">
-        <view class="tlt_left">交易时间：{{item.create_time}}</view>
-        <view class="tlt_left tlt_right color5"  wx:if="{{item.pay_status == '0'&&item.transport_status =='0'}}">等待买家付款</view>
+    <view class="order_tlt w690 flexRowBetween bg1">
+        <view class="tlt_left" style="width:65%">交易时间：{{item.create_time}}</view>
+        <view class="tlt_left tlt_right color5"  style="width:35%" wx:if="{{item.pay_status == '0'&&item.transport_status =='0'}}">等待买家付款</view>
         <view class="tlt_left tlt_right color5"  wx:if="{{item.order_step=='3'}}">已完成</view>
         <view class="tlt_left tlt_right color5"  wx:if="{{item.pay_status == '1'&&item.transport_status =='0'}}">等待卖家发货</view>
         <view class="tlt_left tlt_right color5"  wx:if="{{item.pay_status == '1'&&item.order_step=='0'&&item.transport_status =='1'}}">物流配送中</view>
     </view>
     <block wx:for="{{web_mainData[index].products}}" wx:for-item="c_item" wx:key="id">
-        <view class="product_box w690 flexRowBetween">
+        <view class="product_box w690 flexRowBetween bg1">
             <view class="product_left">
                 <image src="{{c_item.snap_product.mainImg[0].url}}"></image>
             </view>
@@ -40,7 +40,7 @@
             
         </view>
     </block>
-    <view class="w690">
+    <view class="w690" style="height:120rpx;margin-bottom:24rpx;">
         <view class="order_handle flexRowBetween">
              <view class="submit_info font26 color2" data-id="{{item.id}}" bindtap="{{web_buttonCanClick?'deleteOrder':''}}" wx:if="{{item.pay_status == '0'}}">删除订单</view>
               <view class="submit_info font26 color2" data-id="{{item.id}}" data-price="{{item.price}}" bindtap="pay" wx:if="{{item.pay_status == '0'&&item.order_step=='0'}}">去支付</view>

@@ -8,7 +8,11 @@
         </swiper-item>
     </block>
 </swiper>
-
+<view class="mask" wx:if="{{is_show}}" catchtouchmove="true" bindtap="mask">
+    <view class="wx_contact">
+      <image src="{{web_aboutData.mainImg&&web_aboutData.mainImg[0]?web_aboutData.mainImg[0].url:''}}"></image>
+    </view>
+</view>
 <view class="w690">
   <view class="recommended_tlt flex">
     <view class="mall_tlt">
@@ -38,7 +42,7 @@
 </view>
 
 <view class="contact">
-    <view class="contact_item bg1 flex">
+    <view class="contact_item bg1 flex" bindtap="wx_contact"> 
         <image src="/images/contact_icon1.png"></image>
     </view>
     <view class="contact_item bg1 flex" bindtap="phoneCall">

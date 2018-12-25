@@ -304,11 +304,6 @@ page{
 .consult{
 	width:50%;
 }
-.submit_info{
-	position:absolute;
-	left:5%;
-	bottom:20rpx;
-}
 .message{
 	width:100%;
 	height:88rpx;

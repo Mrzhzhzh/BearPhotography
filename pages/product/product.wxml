@@ -8,16 +8,22 @@
         </swiper-item>
     </block>
 </swiper>
-
-<view class="menu bg1 flexRowBetween">
-    <block wx:for="{{web_labelData}}" wx:key="id">
-        <view class="menu_item" bindtap="intoPath" data-path="/pages/productSort/productSort?id={{item.id}}">
-            <view class="menu_img"><image src="{{item.mainImg[0].url}}" mode="aspectFill"></image></view>
-            <view class="menu_box color2 font26">
-                {{item.title}}
+<view class="mask" wx:if="{{is_show}}" catchtouchmove="true" bindtap="mask">
+    <view class="wx_contact">
+      <image src="{{web_aboutData.mainImg&&web_aboutData.mainImg[0]?web_aboutData.mainImg[0].url:''}}"></image>
+    </view>
+</view>
+<view class="menu bg1">
+    <scroll-view scroll-x="true" class="ip_tab_comtainer">
+        <block wx:for="{{web_labelData}}" wx:key="id">
+            <view class="menu_item" bindtap="intoPath" data-path="/pages/productSort/productSort?id={{item.id}}">
+                <view class="menu_img"><image src="{{item.mainImg[0].url}}" mode="aspectFill"></image></view>
+                <view class="menu_box color2 font26">
+                    {{item.title}}
+                </view>
             </view>
-        </view>
-    </block>
+        </block>
+    </scroll-view>
 </view>
 
 <view class="w690">
@@ -48,7 +54,7 @@
 </view>
 
 <view class="contact">
-    <view class="contact_item bg1 flex">
+    <view class="contact_item bg1 flex" bindtap="wx_contact">
         <image src="/images/contact_icon1.png"></image>
     </view>
     <view class="contact_item bg1 flex" bindtap="phoneCall">

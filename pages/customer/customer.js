@@ -5,7 +5,7 @@ const app = getApp();
 
 Page({
   data: {
-    
+    is_show:false,
     indicatorDots: true,
     vertical: false,
     autoplay: true,
@@ -31,7 +31,18 @@ Page({
     const self = this;
     self.getMainData(true)
   },
-
+  wx_contact(){
+    const self =this;
+    self.setData({
+      is_show:true,
+    })
+  },
+  mask(){
+    const self =this;
+    self.setData({
+      is_show:false,
+    })
+  },
   getSliderData(){
     const self = this;
     const postData = {};

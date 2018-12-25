@@ -95,6 +95,9 @@
 	height:30rpx;
 	margin-right:10rpx;
 }
+.confirm{
+	border-top:solid 1px #e0e0e0;
+}
 .confirm_btn{
 	height:100rpx;
 	line-height: 100rpx;
@@ -102,6 +105,9 @@
 	width:100%;
 	position: fixed;
 	bottom: 0;
+	border-top:solid 1px #e0e0e0;
+}
+#confirmOrder{
 	border-top:solid 1px #e0e0e0;
 }
 .confirm_left{

@@ -21,7 +21,7 @@
 	<view class="detail_show">
 		<view id="detail" class="w690" style="{{tabCurrent == 0?'display:block':'display:none'}}">
 			<view class="detail_line flex">
-				<view class="content ql-editor" >
+				<view class="content ql-editor font26" >
 	                <import src="../../wxParse/wxParse.wxml"/>
 	                <template is="wxParse" data="{{wxParseData:web_mainData.content}}"/>
 	            </view> 
@@ -111,7 +111,7 @@
 			<view class="message_left font26 color2">留言备注</view>
 			<view class="message_right font24  color2"><input placeholder="留言备注" data-key="passage1" bindblur="changeBind" value="{{web_submitData.passage1}}"></input></view>
 		</view>
-		<button class="submit_info bg" bindtap="close" style="margin-top:69rpx;border-radius:30rpx;" bindtap="{{web_buttonCanClick?(web_buttonType=='buy'?'goBuy':'addCart'):''}}">确认</button>
+		<button class="submit_info bg" bindtap="close" style="margin-top:20rpx;border-radius:30rpx;background:#ffaa4e;z-index:999;" bindtap="{{web_buttonCanClick?(web_buttonType=='buy'?'goBuy':'addCart'):''}}">确认</button>
 	</view>
 </view>
 

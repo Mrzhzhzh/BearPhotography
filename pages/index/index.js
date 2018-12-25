@@ -7,7 +7,7 @@ const token = new Token();
 
 Page({
   data: {
-
+    is_show:false,
     indicatorDots: true,
     vertical: false,
     autoplay: true,
@@ -224,7 +224,18 @@ Page({
       }
     })
   },
-
+  wx_contact(){
+    const self =this;
+    self.setData({
+      is_show:true,
+    })
+  },
+  mask(){
+    const self =this;
+    self.setData({
+      is_show:false,
+    })
+  },
   phoneCall() {
     const self = this;
     wx.makePhoneCall({
