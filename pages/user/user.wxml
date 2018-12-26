@@ -24,7 +24,7 @@
                     <view class="font26">
                         更多订单
                     </view>
-                    <image src="/images/next_page.jpg"></image>
+                    <image src="/images/next_page.png"></image>
                 </view>
             </view>
         </view>
@@ -54,7 +54,7 @@
             <text>我的积分</text>
         </view>
         <view class="next_page">
-            <image src="/images/next_page.jpg"></image>
+            <image src="/images/next_page.png"></image>
         </view>
     </view>
     <view class="user_infor flexRowBetween w710" bindtap="intoPath" data-path="/pages/userCollect/userCollect">
@@ -63,7 +63,7 @@
             <text>我的收藏</text>
         </view>
         <view class="next_page">
-            <image src="/images/next_page.jpg"></image>
+            <image src="/images/next_page.png"></image>
         </view>
     </view>
     <view class="user_infor flexRowBetween w710" bindtap="intoPath" data-path="/pages/userAddress/userAddress" >
@@ -72,7 +72,7 @@
             <text>地址管理</text>
         </view>
         <view class="next_page">
-            <image src="/images/next_page.jpg"></image>
+            <image src="/images/next_page.png"></image>
         </view>
     </view>
     <view class="user_infor flexRowBetween w710" bindtap="intoPath" data-path="/pages/userGroup/userGroup"  style="margin-top: 20rpx;">
@@ -81,7 +81,7 @@
             <text>团队管理</text>
         </view>
         <view class="next_page">
-            <image src="/images/next_page.jpg"></image>
+            <image src="/images/next_page.png"></image>
         </view>
     </view>
     <view class="user_infor flexRowBetween w710" bindtap="intoPath" data-path="/pages/userPoster/userPoster" style="margin-top: 20rpx;">
@@ -90,7 +90,7 @@
             <text>推广海报</text>
         </view>
         <view class="next_page">
-            <image src="/images/next_page.jpg"></image>
+            <image src="/images/next_page.png"></image>
         </view>
     </view>
 </view>
