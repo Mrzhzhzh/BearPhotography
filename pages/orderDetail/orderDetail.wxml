@@ -1,7 +1,17 @@
 <!--detail.wxml-->
 <view id="details">
-	<view class="banner bg1">
-		<image src="/images/index.png"></image>
+	<view class="page-body">
+	    <view class="page-section page-section-spacing swiper">
+	      <swiper
+	        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
+	        interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+	        <block wx:for="{{web_mainData.bannerImg}}" wx:index="{{index}}" wx:key="id">
+	          <swiper-item>
+	            <image src="{{item.url}}"></image>
+	          </swiper-item>
+	        </block>
+	      </swiper>
+	    </view>
 	</view>
 	<view class="w690 bg1" style="margin-bottom:30rpx;border-bottom:30rpx solid #f6f6f6;">
 		<view class="product_names avoidOverflow font32 color4">

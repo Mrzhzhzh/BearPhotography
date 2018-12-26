@@ -104,7 +104,7 @@
         <image src="/images/contact_icon4.png"></image>
     </view>
 </view>
-<view class="mask" wx:if="{{is_show}}" catchtouchmove="true" >
+<view class="mask" wx:if="{{is_show}}">
   <view class="mask_cont">
     <view class="wx_contact">
       <image src="{{web_aboutData.mainImg&&web_aboutData.mainImg[0]?web_aboutData.mainImg[0].url:''}}"  bindtap="mask"></image>
