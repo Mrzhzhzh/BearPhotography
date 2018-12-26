@@ -61,7 +61,7 @@
 		</view>
 	</view>
 </view>
-<view id="choose" class="{{isShow?'sildeIn':'slideOut'}}">
+<view id="choose" style="{{isShow?'bottom:0':'bottom:-100%'}}">
 	<view style="position:relative;height:100%;overflow:hidden;">
 		<view class="w690">
 			<view class="flexRowBetween pricity">

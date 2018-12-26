@@ -22,7 +22,9 @@
     </view>
 </view>
 <view class="w690">
-    <block wx:for="{{web_mainData.mainImg}}" wx:key="id">
-        <image src="{{item.url}}" />
-    </block>
+    <view class="img_show">
+        <block wx:for="{{web_mainData.mainImg}}" wx:key="id">
+            <image src="{{item.url}}" />
+        </block>
+    </view>
 </view>

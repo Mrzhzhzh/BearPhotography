@@ -61,11 +61,13 @@
 </view>
 </view>
 <view class="w690">
-    <view class="font30 color2" style="height:70rpx;line-height:70rpx;">可用积分：{{web_userData.score}}</view>
-    <view>
-        <input data-key="score" style="border:solid 1px #e0e0e0;border-radius:10rpx;line-height:60px;height:60rpx;font-size:26rpx;padding-left:20rpx;"   bindblur="inputBind" value="{{web_sForm.score}}"></input>
+    <view class="flexRowBetween">
+        <view class="font30 color2" style="width:50%;height:70rpx;line-height:70rpx;">可用积分：{{web_userData.score}}</view>
+        <view class="font30 color2" style="width:50%;height:70rpx;line-height:70rpx;">积分抵扣:{{web_pay.score?web_pay.score:'0'}}</view>
     </view>
-    <view class="font30 color2" style="height:70rpx;line-height:70rpx;">积分抵扣:{{web_pay.score?web_pay.score:'0'}}</view>
+    <view>
+        <input data-key="score" placeholder="输入你要使用的积分" style="border:solid 1px #e0e0e0;border-radius:10rpx;line-height:60px;height:60rpx;font-size:26rpx;padding-left:20rpx;"   bindblur="inputBind" value="{{web_sForm.score}}"></input>
+    </view>
     <view class="confirm_btn flex font30">
        <view class="confirm_left color6">合计:<text class="color5"> ¥{{web_pay.wxPay&&web_pay.wxPay.price||0}}</text></view> 
        <view class="confirm_right color1 bg" bindtap="{{web_buttonCanClick?'submit':''}}">提交订单</view> 
