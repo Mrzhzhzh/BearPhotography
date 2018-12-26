@@ -101,12 +101,11 @@ Page({
     const callback = (res)=>{
       console.log('res',res)
       if(res.solely_code==100000){
-
         self.data.submitData.mainImg.push({url:res.info.url})
         self.setData({
           web_submitData:self.data.submitData
         });
-        console.log('web_submitData',web_submitData);
+        console.log('web_submitData',self.data.submitData);
         wx.hideLoading()  
       }else{
         api.showToast('网络故障','none')
