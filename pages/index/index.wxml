@@ -105,10 +105,12 @@
     </view>
 </view>
 <view class="mask" wx:if="{{is_show}}" catchtouchmove="true" >
+  <view class="mask_cont">
     <view class="wx_contact">
       <image src="{{web_aboutData.mainImg&&web_aboutData.mainImg[0]?web_aboutData.mainImg[0].url:''}}"  bindtap="mask"></image>
     </view>
     <button bindtap="saveImageToPhotosAlbum">保存到相册</button>
+  </view>
 </view>
 <view class="space_bottom"></view>
 <view class="navbar">

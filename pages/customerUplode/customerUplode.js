@@ -106,6 +106,7 @@ Page({
         self.setData({
           web_submitData:self.data.submitData
         });
+        console.log('web_submitData',web_submitData);
         wx.hideLoading()  
       }else{
         api.showToast('网络故障','none')

@@ -24,16 +24,15 @@
     </view>
   </view>
 </view>
-<view class="upload w690 flexCenter" style="border-bottom:solid 1px #d6d6d6;">
-        <view class="upload_item color2 font24 " bindtap="upLoadImg">
+<view class="upload w690 flex" style="border-bottom:solid 1px #d6d6d6;">
+        <view class="upload_item color2 font24 " bindtap="upLoadImg" v-if="web_submitData.mainImg.length<=3">
           添加照片
         </view>
-
+        <block  wx:for="{{web_submitData.mainImg}}" wx:key="{{index}}">
         <view class="upload_item color2 font24 upload_img">
-          <block  wx:for="{{web_submitData.mainImg}}" wx:key="{{index}}">
             <image src="{{item.url}}"></image>
-          </block>
         </view>
+      </block>
     </view>
 
   <button form-type="submit" class="submit_info" style="width:50%;margin:180rpx auto 0 auto;height:66rpx;line-height:66rpx;border-radius:0rpx;border-radius:50rpx;" open-type="getUserInfo" bindgetuserinfo="{{web_buttonCanClick?'submit':''}}">发布</button>

@@ -153,15 +153,15 @@ page{
 }
 /**********联系方式********************/
 .contact{
-	width:44rpx;
+	width:60rpx;
 	position:fixed;
 	right:4%;
 	top:50%;
 }
 .contact_item{
-	width:44rpx;
-	height:44rpx;
-	margin:10rpx 0;
+	width:60rpx;
+	height:60rpx;
+	margin:20rpx 0;
 	border-radius:50%;
 }
 .contact_item image{

@@ -46,7 +46,7 @@
         </view>
         <view class="user_address">
             <view class="recive flexRowBetween">
-                <view class="detail_address color4" style="height:76rpx;line-height:76rpx;width:86%;{{fonts[3].font}}">收货地址：{{web_addressData.province+web_addressData.city+web_addressData.country+web_addressData.detail}}</view>
+                <view class="detail_address color4 avoidOverflow" style="height:76rpx;line-height:76rpx;width:100%;{{fonts[3].font}}">收货地址：{{web_addressData.province+web_addressData.city+web_addressData.country+web_addressData.detail}}</view>
             </view>
         </view>
     </view>
