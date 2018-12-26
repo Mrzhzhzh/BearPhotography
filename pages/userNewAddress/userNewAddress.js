@@ -113,7 +113,7 @@ Page({
 
   submit(){
     const self = this;
-    api.buttonCanClick(self,true);
+    api.buttonCanClick(self);
     var phone = self.data.sForm.phone;
     const pass = api.checkComplete(self.data.sForm);
     console.log('self.data.sForm',self.data.sForm)
@@ -136,6 +136,7 @@ Page({
       }
     }else{
       api.showToast('请补全信息','fail');
+      api.buttonCanClick(self,true);
     };
   },
 
