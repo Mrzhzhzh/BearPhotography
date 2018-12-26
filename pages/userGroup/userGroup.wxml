@@ -11,7 +11,7 @@
   <block wx:for="{{web_mainData}}" wx:key="id">
     <view class="p40">
       <view class="cash_cont flexRowBetween">
-        <view class="tlt_item tlt_left">{{item.userInfo[0].nickname}}</view>
+        <view class="tlt_item tlt_left">{{item.userInfo[0].nickname?item.userInfo[0].nickname:'用户暂未授权'}}</view>
         <view class="tlt_item tlt_right">{{item.create_time}}</view>
       </view>
     </view>

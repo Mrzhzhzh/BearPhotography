@@ -29,6 +29,7 @@ Page({
   onLoad(options) {
     const self = this;
     api.commonInit(self);
+    token.getProjectToken();
     if(options.scene){
       var scene = decodeURIComponent(options.scene)
     };
@@ -215,15 +216,50 @@ Page({
         wx.openLocation({        //所以这里会显示你当前的位置
           // longitude: 109.045249,
           // latitude: 34.325841,
-          longitude: 109.038907,
-          latitude: 34.319956,
-          name: "长安区韦曲建材街十三中向西50米路北(耀阳灯饰二楼)",
+          longitude: 108.9259300000,
+          latitude: 34.1639200000,
+          name: "威尼熊经典儿童摄影(长安店)",
           address:"长安区韦曲建材街十三中向西50米路北(耀阳灯饰二楼)",
           scale: 28
         })
       }
     })
   },
+
+  saveImageToPhotosAlbum() {  
+    const self = this;
+    wx.showLoading();
+    wx.downloadFile({  
+      url: self.data.aboutData.mainImg[0].url,  
+      success: function (res) {  
+        console.log("下载文件：success");  
+        console.log(res);  
+
+        // 保存图片到系统相册  
+        wx.saveImageToPhotosAlbum({  
+          filePath: res.tempFilePath,  
+          success(res) {  
+            console.log("保存图片：success");  
+            wx.showToast({  
+              title: '保存成功',  
+            });  
+          },  
+          fail(res) {  
+            console.log("保存图片：fail");  
+            console.log(res);  
+          }  
+        })  
+      },  
+      fail: function (res) {  
+      
+        console.log(res);  
+      }  
+    }) 
+    wx.hideLoading(); 
+  },
+
+  
+
   wx_contact(){
     const self =this;
     self.setData({

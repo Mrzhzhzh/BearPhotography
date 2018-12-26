@@ -16,7 +16,7 @@ Page({
     mainData:[],
     searchItem:{
       thirdapp_id:getApp().globalData.thirdapp_id,
-      parent_no:wx.getStorageSync('info').user_no,
+ 
       level:1
     }
 
@@ -26,7 +26,7 @@ Page({
   onLoad(){
     const self = this;
     api.commonInit(self);
-    if(self.data.searchItem.parent_no&&self.data.searchItem.parent_no!=undefined){
+ /*   if(self.data.searchItem.parent_no&&self.data.searchItem.parent_no!=undefined){
       self.getMainData();
     }else{
       var token = new Token();
@@ -35,7 +35,8 @@ Page({
         self.getMainData(false,res)
       };
       token.getProjectToken(callback,{refreshToken:true});
-    };
+    };*/
+    self.getMainData();
     self.setData({
       num:self.data.num
     })  
@@ -53,6 +54,7 @@ Page({
     postData.tokenFuncName = 'getProjectToken';
     console.log(self.data.searchItem);
     postData.searchItem = api.cloneForm(self.data.searchItem);
+    postData.searchItem.parent_no=wx.getStorageSync('info').user_no;
     postData.order = {
       create_time:'desc'
     }
@@ -99,9 +101,8 @@ Page({
     this.setData({
       num: num
     });
-    self.data.searchItem = {};
     if(num=='0'){
-
+      self.data.searchItem.level = 1;
     }else if(num=='1'){
       self.data.searchItem.level = 2;
     };

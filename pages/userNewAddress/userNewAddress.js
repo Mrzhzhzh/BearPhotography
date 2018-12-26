@@ -16,7 +16,7 @@ Page({
       phone:'',
       detail:'',
       city:'',
-      isdefault:''
+
     },
     id:'',
     
@@ -83,6 +83,7 @@ Page({
     postData.searchItem.id = self.data.id;
     postData.data = {};
     postData.data = api.cloneForm(self.data.sForm);
+    postData.data.isdefault = self.data.isdefault;
     const callback = (data)=>{
       if(data){
         api.dealRes(data);
@@ -99,6 +100,7 @@ Page({
     postData.tokenFuncName = 'getProjectToken';
     postData.data = {};
     postData.data = api.cloneForm(self.data.sForm);
+    postData.data.isdefault = self.data.isdefault;
     const callback = (data)=>{
       if(data){
         api.dealRes(data);
@@ -169,9 +171,9 @@ Page({
     const self = this;
     console.log(e)
     if( e.detail.value == true){
-      self.data.sForm.isdefault = 1
+      self.data.isdefault = 1
     }else{
-      self.data.sForm.isdefault = 0
+      self.data.isdefault = 0
     }
     
   }
