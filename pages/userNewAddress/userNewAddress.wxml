@@ -25,7 +25,7 @@
 <view class="user_input flexRowBetween   w710" style="margin-top:170rpx">
 	<view class="input_note font30 address_set">设为默认地址</view>
 	<view class="body-view">
-		<switch bindchange="switch2Change" checked="{{web_isdefault=='1'?'true':'false'}}"/>
+		<switch bindchange="switch2Change" checked="{{web_isdefault==1?true:''}}"/>
 	</view>
 </view>
 

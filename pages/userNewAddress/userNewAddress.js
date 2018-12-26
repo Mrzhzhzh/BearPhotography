@@ -8,7 +8,6 @@ Page({
 
 
   data: {
-    region: ['陕西省', '西安市', '雁塔区'],
     sForm:{
       name:'',
       latitude:'',
@@ -53,7 +52,8 @@ Page({
       self.data.sForm.latitude = res.info.data[0].latitude;
       self.data.sForm.longitude = res.info.data[0].longitude;
       self.data.sForm.city = res.info.data[0].city;
-      self.data.sForm.isdefault = res.info.data[0].isdefault;
+      self.data.isdefault = res.info.data[0].isdefault;
+      console.log('self.data.isdefault',self.data.isdefault)
       self.setData({
         web_isdefault:self.data.isdefault,
         web_mainData:self.data.sForm,
