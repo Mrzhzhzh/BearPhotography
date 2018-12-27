@@ -279,7 +279,7 @@ Page({
               tableName:'FlowLog',
               FuncName:'add',
               data:{
-                behavior:1,
+                behavior:2,
                 count:self.data.pay.wxPay.price/parseInt(wx.getStorageSync('info').thirdApp.custom_rule.firstClass),
                 trade_info:'下级消费返积分',
                 user_no:transitionArray[i].parent_no,
@@ -293,7 +293,7 @@ Page({
               tableName:'FlowLog',
               FuncName:'add',
               data:{
-                behavior:1,
+                behavior:2,
                 count:self.data.pay.wxPay.price/wx.getStorageSync('info').thirdApp.custom_rule.secondClass,
                 trade_info:'下级消费返积分',
                 user_no:transitionArray[i].parent_no,

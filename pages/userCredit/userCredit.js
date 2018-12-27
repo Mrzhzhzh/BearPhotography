@@ -117,7 +117,7 @@ Page({
         searchItem:{
           user_no:wx.getStorageSync('info').user_no,
           type:3,
-          behavior:1,
+          behavior:2,
           count:['>',0]
         }
       }
