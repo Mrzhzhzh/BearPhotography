@@ -18,20 +18,18 @@ Page({
 
     },
     id:'',
-    
+    buttonCanClick:true
   },
 
   onLoad(options) {
     const self=this;
-    api.commonInit(self);
     if(options.id){
       self.data.id = options.id
       self.getMainData(self.data.id); 
-    }else{
-      self.setData({
-        web_region:self.data.region
-      })
     };
+    self.setData({
+      web_buttonCanClick:self.data.buttonCanClick
+    });
     wx.hideLoading();
     
   },
@@ -119,7 +117,8 @@ Page({
     console.log('self.data.sForm',self.data.sForm)
     if(pass){
       if(phone.trim().length != 11 || !/^1[3|4|5|6|7|8|9]\d{9}$/.test(phone)){
-        api.showToast('手机格式不正确','fail')
+        api.showToast('手机格式不正确','fail');
+        api.buttonCanClick(self,true);
       }else{
         if(self.data.id){
           wx.showLoading();     
