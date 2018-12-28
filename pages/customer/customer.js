@@ -174,6 +174,10 @@ Page({
             wx.showToast({  
               title: '保存成功',  
             });  
+            self.data.is_show = false;
+            self.setData({
+              is_show:self.data.is_show
+            });
           },  
           fail(res) {  
             console.log("保存图片：fail");  

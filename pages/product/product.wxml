@@ -10,8 +10,8 @@
 </swiper>
 <view class="mask" wx:if="{{is_show}}">
   <view class="mask_cont">
-    <view class="wx_contact">
-      <image src="{{web_aboutData.mainImg&&web_aboutData.mainImg[0]?web_aboutData.mainImg[0].url:''}}"  bindtap="mask"></image>
+    <view class="wx_contact"  bindtap="mask">
+      <image src="{{web_aboutData.mainImg&&web_aboutData.mainImg[0]?web_aboutData.mainImg[0].url:''}}"></image>
     </view>
     <button bindtap="saveImageToPhotosAlbum" class="bg color1 font28">保存到相册</button>
   </view>

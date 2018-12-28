@@ -300,4 +300,5 @@ page{
 	position:absolute;
 	left:0;
 	bottom:110rpx;
+	z-index:9999;
 }
