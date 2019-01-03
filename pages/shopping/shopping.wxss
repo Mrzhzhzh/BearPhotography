@@ -222,11 +222,11 @@ page{
 }
  
 .shopping_cart{
-	width:228rpx;
+	width:526rpx;
 	height:228rpx;
 	background:#f2f2f2;
 	border-radius:50%;
-	line-heihgt:228rpx;
+	line-height:228rpx;
 	text-align:center;
 	margin:235rpx auto 0rpx;
 
@@ -256,4 +256,9 @@ page{
 }
 .nav_img{
 	margin:0 auto 10rpx auto;
+}
+.empty image{
+	width:526rpx;
+	height:190rpx;
+	margin:0 auto;
 }
