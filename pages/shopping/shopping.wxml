@@ -52,11 +52,11 @@
 </view>
 
 <view id="shoppingEmpty" wx:else>
-    <view class="shopping_cart flex" bindtap="intoPathRedi" data-path="/pages/mall/Index/index">
+    <view class="shopping_cart flex">
         <view class="scale2" style="width:104px;height:96px;margin:0 auto;{{img}};background-position: 0px -198px;"></view>
     </view>
     <view class="note">空空如也购物车没有任何商品</view>
-    <view class="goShopping" bindtap="intoPathRedi" data-path="/pages/mall/Sort/sort">去逛逛</view>
+    <view class="goShopping" bindtap="tabPath" data-path="/pages/product/product">去逛逛</view>
 </view>
 
 

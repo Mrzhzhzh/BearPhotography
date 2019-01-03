@@ -183,17 +183,10 @@ Page({
     });
     self.countTotalPrice();
   }, 
-
-
-
-  intoPathRedi(e){
+  tabPath(e){
     const self = this;
-    api.pathTo(api.getDataSet(e,'path'),'redi');
+    api.pathTo(api.getDataSet(e,'path'),'rela');
   },
-
-
-   
-  
 })
 
   
