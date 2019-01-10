@@ -13,7 +13,7 @@
 <view class="w690" style="margin-top:30rpx;">
   <view class="recommended flexRowBetween">
     <block wx:for="{{web_mainData}}" wx:key="id">
-      <view class="recommend_left bg1" data-path="/pages/customerDetail/customerDetail?id={{item.id}}" bindtap="intoPath">
+      <view class="recommend_left bg1" data-path="/pages/indexDetail/indexDetail?id={{item.id}}" bindtap="intoPath">
         <view class="recommend_img"><image src="{{item.mainImg[0].url}}"></image></view>
         <view class="product_name font28 color2">{{item.title}}</view>
       </view>
