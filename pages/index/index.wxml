@@ -48,7 +48,7 @@
       <block wx:for="{{web_mainData}}" wx:key="id">
         <view class="recommend_left bg1" bindtap="intoPath" data-path="/pages/indexDetail/indexDetail?id={{item.id}}">
             <view class="recommend_img"><image src="{{item.mainImg[0].url}}"></image></view>
-            <view class="product_name font28 color2">{{item.title}}</view>
+            <view class="product_name font28 color2 avoidOverflow">{{item.title}}</view>
         </view>
       </block>
   </view>
@@ -67,7 +67,7 @@
     <block wx:for="{{web_activeData}}" wx:key="id">
       <view class="recommend_left bg1" bindtap="intoPath" data-path="/pages/indexDetail/indexDetail?id={{item.id}}&type=活动介绍">
           <view class="recommend_img"><image src="{{item.mainImg[0].url}}"></image></view>
-          <view class="product_name font28 color2">{{item.title}}</view>
+          <view class="product_name font28 color2 avoidOverflow">{{item.title}}</view>
       </view>
     </block>
   </view>

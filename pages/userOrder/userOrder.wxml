@@ -7,7 +7,7 @@
         <text class="{{num ==1?'tab_this':''}}">待付款</text>
     </view>
     <view class="tab_item" data-num="2" bindtap="{{web_buttonCanClick?'menuClick':''}}">
-        <text class="{{num ==2?'tab_this':''}}">待使用</text>
+        <text class="{{num ==2?'tab_this':''}}">待收货</text>
     </view>
     <view class="tab_item" data-num="3" bindtap="{{web_buttonCanClick?'menuClick':''}}">
         <text class="{{num ==3?'tab_this':''}}">已完成</text>
@@ -30,7 +30,7 @@
             <view class="product_right flex">
                 <view class="product_detail">
                     <view class="font32 color3 product_top">{{c_item.snap_product.title}}</view>
-                    <view class="font24 color9">{{c_item.snap_product.description}}</view>
+                    <view class="font24 color9 avoidOverflow">{{c_item.snap_product.description}}</view>
                     <view class="flexRowBetween" style="height:40%;">
                         <view class="font28 color4 flex">x{{c_item.count}}</view>
                         <view class="font26 color5 product_price flex">¥{{c_item.snap_product.price}}</view>
@@ -42,9 +42,9 @@
     </block>
     <view class="w690" style="height:120rpx;margin-bottom:24rpx;">
         <view class="order_handle flexRowBetween">
-             <view class="submit_info font26 color2" data-id="{{item.id}}" bindtap="{{web_buttonCanClick?'deleteOrder':''}}" wx:if="{{item.pay_status == '0'}}">删除订单</view>
-              <view class="submit_info font26 color2" data-id="{{item.id}}" data-price="{{item.price}}" bindtap="pay" wx:if="{{item.pay_status == '0'&&item.order_step=='0'}}">去支付</view>
-              <view class="submit_info font26 color2" bindtap="{{web_buttonCanClick?'orderUpdate':''}}"  wx:if="{{item.pay_status == '1'&&item.transport_status == '1'&&item.order_step == '0'}}" data-id="{{item.id}}">确认收货</view>
+             <view class="submit_info font26 color2 bg" data-id="{{item.id}}" bindtap="{{web_buttonCanClick?'deleteOrder':''}}" wx:if="{{item.pay_status == '0'}}">删除订单</view>
+              <view class="submit_info font26 color2 bg" data-id="{{item.id}}" data-price="{{item.price}}" bindtap="pay" wx:if="{{item.pay_status == '0'&&item.order_step=='0'}}">去支付</view>
+              <view class="submit_info font26 color2  bg" bindtap="{{web_buttonCanClick?'orderUpdate':''}}"  wx:if="{{item.pay_status == '1'&&item.transport_status == '1'&&item.order_step == '0'}}" data-id="{{item.id}}">确认收货</view>
                 
         </view>
     </view>

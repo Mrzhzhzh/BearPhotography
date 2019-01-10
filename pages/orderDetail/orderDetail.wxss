@@ -194,16 +194,17 @@ page{
 .pro_name{
 	font-size:28rpx;
 	color:#333;
-	height:25%;
+	height:35%;
+
 }
 .pro_type{
 	font-size:22rpx;
 	color:#999;
-	height:25%;
+	height:35%;
 }
 .product_txt{
 	width:65%;
-	height:100%;
+	height:80%;
 	}
 #type{
 	height:60rpx;

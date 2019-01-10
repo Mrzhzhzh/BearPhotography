@@ -66,13 +66,13 @@ page{
 }
 .submit_info{
 	width:140rpx;
-	height:40rpx;
-	line-height:40rpx;
+	height:50rpx;
+	line-height:50rpx;
 	margin:0;
 	background:#fff;
-	border:solid 1px #aeaeae;
 	color:#666;
-	border-radius:10rpx;
+	background:#ffaa4e;
+	color:#fff;
 }
 .order_tlt{
 	height:78rpx;
