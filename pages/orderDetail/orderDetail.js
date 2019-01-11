@@ -183,13 +183,10 @@ Page({
 
   chooseSku(e){
     const self = this;
-
-    
     var id = api.getDataSet(e,'id');
     if(self.data.can_choose_sku_item.indexOf(id)==-1){
       return;
     };
-
     var index = self.data.choosed_sku_item.indexOf(id);
     if(index==-1){
       self.data.choosed_sku_item.push(id);

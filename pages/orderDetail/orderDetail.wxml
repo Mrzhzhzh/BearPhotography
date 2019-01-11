@@ -1,4 +1,5 @@
 <!--detail.wxml-->
+<wxs src="../../utils/func.wxs" module="func" />
 <view id="details">
 	<view class="page-body">
 	    <view class="page-section page-section-spacing swiper">
@@ -98,8 +99,8 @@
 				</view>
 				<scroll-view scroll-Y style="height:150rpx;margin-bottom:30rpx;">
 					<view class="type_right flex">
-						<block wx:for="{{web_skuLabelData[index].child}}" wx:key="id" wx:for-item="c_item">
-							<view class="pro_types" data-id="{{c_item.id}}" data-parentid="{{item.id}}"  bindtap="{{func.inArray(c_item.id,web_can_choose_sku_item)!=-1?'chooseSku':''}}" style="{{func.inArray(c_item.id,web_can_choose_sku_item)==-1?'border:1px dashed  #e5e5e5;color:#e5e5e5;':(func.inArray(c_item.id,web_choosed_sku_item)!=-1?'border:1px solid #ffaa4e;color:#ffaa4e;':'')}}">	
+						<block wx:for="{{web_skuLabelData[index].child}}" wx:key="c_item" wx:for-item="c_item">
+							<view class="pro_types" data-id="{{c_item.id}}" data-parentid="{{item.id}}"  bindtap="{{func.inArray(c_item.id,web_can_choose_sku_item)!=-1?'chooseSku':''}}" style="{{func.inArray(c_item.id,web_can_choose_sku_item)==-1?'border:1px dashed  gray;color:gray':(func.inArray(c_item.id,web_choosed_sku_item)!=-1?'border:1px solid #ffaa4e;color:#ffaa4e;':'')}}">	
 								{{c_item.title}}
 							</view>
 						</block>
