@@ -66,7 +66,7 @@
             <image src="/images/next_page.png"></image>
         </view>
     </view>
-    <view class="user_infor flexRowBetween w710" bindtap="intoPath" data-path="/pages/userAddress/userAddress" >
+    <!-- <view class="user_infor flexRowBetween w710" bindtap="intoPath" data-path="/pages/userAddress/userAddress" >
         <view class="user_left flexRowBetween">
             <image src="/images/user_icon3.png"></image>
             <text>地址管理</text>
@@ -74,7 +74,7 @@
         <view class="next_page">
             <image src="/images/next_page.png"></image>
         </view>
-    </view>
+    </view> -->
     <view class="user_infor flexRowBetween w710" bindtap="intoPath" data-path="/pages/userGroup/userGroup"  style="margin-top: 20rpx;">
         <view class="user_left flexRowBetween">
             <image src="/images/user_icon4.png"></image>

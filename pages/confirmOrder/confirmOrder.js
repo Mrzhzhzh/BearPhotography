@@ -36,7 +36,7 @@ Page({
     order_id:'',
     order_array:[],
     buyType:'delivery',
-    isFirstLoadAllStandard:['getMainData','getAddressData','getUserData','distributionGet'],
+    isFirstLoadAllStandard:['getMainData','getUserData','distributionGet'],
     pay:{
       coupon:[]
     },
@@ -75,7 +75,7 @@ Page({
       self.data.searchItem.isdefault = 1;
     };
     
-    self.getAddressData();
+    //self.getAddressData();
 
   },
 
@@ -215,22 +215,7 @@ Page({
 
 
 
-  getAddressData(){
-    const self = this;
-    const postData = {}
-    postData.tokenFuncName = 'getProjectToken';
-    postData.searchItem = {isdefault:1};
-    const callback = (res)=>{
-      if(res.info.data.length>0){
-        self.data.addressData = res.info.data[0]; 
-      };
-      api.checkLoadAll(self.data.isFirstLoadAllStandard,'getAddressData',self);
-      self.setData({
-        web_addressData:self.data.addressData,
-      });
-    };
-    api.addressGet(postData,callback);
-  },
+
 
 
 
