@@ -357,11 +357,11 @@ Page({
   submit(e){
     const self = this;
     api.buttonCanClick(self);
-    if(self.data.buyType=='delivery'&&self.data.addressData.length==0){
+    /*if(self.data.buyType=='delivery'&&self.data.addressData.length==0){
       api.showToast('请选择收货地址','error');
       api.buttonCanClick(self,true);
       return;
-    };
+    };*/
     self.pay();
   },
 
