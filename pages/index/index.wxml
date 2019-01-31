@@ -59,9 +59,7 @@
         <image src="/images/title.png"></image>
         <view  class="mall_tlt_txt font28 color2">活动介绍</view>
     </view>
-    <view class="more flex">
-        <image src="/images/next_page.jpg"></image>
-    </view>
+
   </view>
   <view class="recommended flexRowBetween">
     <block wx:for="{{web_activeData}}" wx:key="id">

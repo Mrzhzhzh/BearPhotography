@@ -103,12 +103,14 @@ Page({
       menu_id:['NOT IN',[7,8]]
     };
     postData.order = {
-      create_time:'normal'
+      create_time:'desc'
     };
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.mainData.push.apply(self.data.mainData,res.info.data);
-       
+        if(res.info.data.length>6){
+          self.data.mainData = self.data.mainData.slice(0,6) 
+        }
       }else{
         self.data.isLoadAll = true;
         api.showToast('没有更多了','none');

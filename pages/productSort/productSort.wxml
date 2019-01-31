@@ -16,7 +16,7 @@
    <block wx:for="{{web_mainData}}" wx:key="id">
       <view class="recommend_left bg1" >
           <view class="recommend_img"><image src="{{item.mainImg[0].url}}"></image></view>
-          <view class="product_name font28 color2">{{item.title}}</view>
+          <view class="product_name font28 color2 avoidOverflow">{{item.title}}</view>
           <view class="product_buy flex">
             <view class="buy_left font26">¥{{item.price}}</view>
             <view class="buy_right" bindtap="intoPath" data-path="/pages/orderDetail/orderDetail?id={{item.id}}">
